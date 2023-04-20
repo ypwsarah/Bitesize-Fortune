@@ -1,0 +1,59 @@
+{
+    "name":"user",
+    "footstep":"number",
+    "fortune":
+    [
+        {
+            "fortuneCode":"O_A1",
+            "fortuneDescription":"descriptionA1",
+            "site":"Out",
+            "fortuneCategory":"OutA"
+        },
+        {
+            "fortuneCode":"O_A2",
+            "fortuneDescription":"descriptionA2",
+            "site":"Out",
+            "fortuneCategory":"OutA"
+        },
+        {
+            "fortuneCode":"O_A3",
+            "fortuneDescription":"descriptionA3",
+            "site":"Out",
+            "fortuneCategory":"OutA"
+        },
+        {
+            "fortuneCode":"O_A4",
+            "fortuneDescription":"descriptionA4",
+            "site":"Out",
+            "fortuneCategory":"OutA"
+        },
+        {
+            "fortuneCode":"O_B1",
+            "fortuneDescription":"descriptionA1",
+            "site":"Out",
+            "fortuneCategory":"OutB"
+        },
+        {
+            "fortuneCode":"O_B2",
+            "fortuneDescription":"descriptionA2",
+            "site":"Out",
+            "fortuneCategory":"OutB"
+        },
+        {
+            "fortuneCode":"O_B3",
+            "fortuneDescription":"descriptionA3",
+            "site":"Out",
+            "fortuneCategory":"OutB"
+        },
+        {
+            "fortuneCode":"O_B4",
+            "fortuneDescription":"descriptionA4",
+            "site":"Out",
+            "fortuneCategory":"OutB"
+        }
+    ]
+    
+    
+    
+   
+}

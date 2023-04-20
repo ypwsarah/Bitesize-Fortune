@@ -1,0 +1,18 @@
+{
+    "name":"user",
+    "footstep":"number",
+    "fortuneSite":[
+        {
+        "Category_O":[{
+            "OA":["fortune_OA1","fortune_OA2"] ,
+            "OB":["fortune_OB1","fortune_OB2"] 
+            
+        }],
+ 
+            "Category_I":[{
+                "IA":["fortune_IA1","fortune_IA2"] ,
+                "IB":["fortune_IB1","fortune_IB2"]     
+        }]
+                    }]
+   
+}
