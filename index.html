@@ -1,26 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitesize Fortune</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body id="body">
-    <div id="info">Use the WASD keys or the arrow keys to explore your personalized map! <br>Press Spacebar in your favorite location to pack a souvenir~</div>
-    <canvas id="canvas"></canvas>
-    <div class = "container" id = "bar">
-		<form id = "form" style="position:absolute;left:0px;top:0px;width:700px;">
-		  <!-- <label for="footstep" >Your Weekly Footstep </label> -->
-          <!-- <input type="number" id="footstep" name="footstep"> -->
-		</form>
-</div>
-		<!-- <button style="position:absolute;left:100px;top:300px;width:600px;">Submit</button><br><br> -->
-    
-    <!-- <div class="square"></div> -->
-    
-    <script src="script.js"></script>
-</body>
-</html>
+<DOCTYPE HTML>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Bitesize Fortune</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body style="background-image:url('image/sparrow_A.svg')">
+		
 
+		<!-- <div class = "container_t" id = "bar"> -->
+			
+			<!-- <canvas id="canvas"></canvas> -->
+			<form id = "form_ticket">
+				
+				
+			  <label for="footstep" >What's your Average Footstep?</label><br>
+			  <input type="text" class = "input_line" id = "username" name="username" placeholder="Your name">
+			  <br>
+			  <input type="number" class = "input_line" id = "footstep_week" name="footstep_week" placeholder="Past week">
+			  <br>
+			  <!-- <label for="footstep2" >What's your Average Footstep in the Past Week?</label><br> -->
+			  <input type="number" class = "input_line" id = "footstep_e" name="footstep_e" placeholder="Your Expectation"><br>
+			  <input type="submit" class = "submit" value="Enter">
+			</form>
+		
+	<!-- </div> -->
+	
+		<script src="script_ticket.js"></script>
+	</body>
+	</html>
