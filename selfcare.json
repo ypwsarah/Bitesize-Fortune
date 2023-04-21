@@ -71,7 +71,7 @@
             "fortuneCode":"O_D1",
             "fortuneDescription":"Keeping track of finances",
             "site":"Out",
-            "fortuneCategory":"Social"
+            "fortuneCategory":"Financial"
         },
         {
             "fortuneCode":"O_D2",
@@ -79,12 +79,6 @@
             "site":"Out",
             "fortuneCategory":"Financial",
             "expiration":"2 months"
-        },
-        {
-            "fortuneCode":"O_D2",
-            "fortuneDescription":"Saving for a small gift to yourself",
-            "site":"Out",
-            "fortuneCategory":"Financial"
         },
         {
             "fortuneCode":"I_A1",

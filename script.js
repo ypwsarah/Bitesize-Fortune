@@ -52,9 +52,9 @@ const footstep_week = urlParams.get('footstep_week');
 const footstep_e = urlParams.get('footstep_e');
 
 var rn5 = Math.floor(Math.random() * 5);
-var rn3 = Math.floor(Math.random() * 8) + 5;
-var rn4 = Math.floor(Math.random() * 12) + 8;
-var rn2 = Math.floor(Math.random() * 14) + 12;
+var rn3 = Math.floor(Math.random() * 3) + 5;
+var rn4 = Math.floor(Math.random() * 3) + 8;
+var rn2 = Math.floor(Math.random() * 2) + 11;
 
 // console.log("Name:", username);
 
