@@ -41,8 +41,6 @@ let getFortune = false;
 
 // var body_ = document.getElementById("body");
 
-
-
 var img = new Image();
 img.src = "image/paw.svg";
 
@@ -89,7 +87,7 @@ function update(){
     x += vxr;
     y += vyu;
     y += vyd;
-    console.log(x);
+    // console.log(x);
 
     if(x<canvas.width/3 && y<canvas.height/3){
         b1();
