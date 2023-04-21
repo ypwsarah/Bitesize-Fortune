@@ -38,6 +38,9 @@ let getFortune = false;
 let ExMode = false;
 let InMode = false;
 
+let phy, env, soc, fin = false;
+let men, emo, rec, spi = false;
+
 // console.log("Window Location:", window.location);
 const myKeysValues = window.location.search;
 // console.log("Keys & Values:", myKeysValues);
@@ -47,6 +50,11 @@ const urlParams = new URLSearchParams(myKeysValues);
 const username = urlParams.get('username');
 const footstep_week = urlParams.get('footstep_week');
 const footstep_e = urlParams.get('footstep_e');
+
+var rn5 = Math.floor(Math.random() * 5);
+var rn3 = Math.floor(Math.random() * 8) + 5;
+var rn4 = Math.floor(Math.random() * 12) + 8;
+var rn2 = Math.floor(Math.random() * 14) + 12;
 
 // console.log("Name:", username);
 
@@ -127,6 +135,39 @@ async function getCare(){
         document.querySelector("#card").innerText = data.fortune[3].fortuneDescription;
 
     })
+
+    if(phy == true){
+        fetch('selfcare.json')
+        .then(response => response.json())
+        .then(data =>{
+           document.querySelector("#card").innerText = data.fortune[rn5].fortuneDescription;
+        })
+    }
+
+    if(env == true){
+        fetch('selfcare.json')
+        .then(response => response.json())
+        .then(data =>{
+           document.querySelector("#card").innerText = data.fortune[rn3].fortuneDescription;
+        })
+    }
+
+    if(soc == true){
+        fetch('selfcare.json')
+        .then(response => response.json())
+        .then(data =>{
+           document.querySelector("#card").innerText = data.fortune[rn4].fortuneDescription;
+        })
+    }
+
+    if(fin == true){
+        fetch('selfcare.json')
+        .then(response => response.json())
+        .then(data =>{
+           document.querySelector("#card").innerText = data.fortune[rn2].fortuneDescription;
+        })
+    }
+    
 }
 
 function update(){
@@ -169,16 +210,8 @@ if(InMode == true){
     document.getElementById("info").innerHTML = document.getElementById("info").innerHTML.replace('Use the WASD keys or the arrow keys to explore your personalized map! <br>Press Spacebar in your favorite location to pack a souvenir~', 'Drag to position the sparrows! <br>Press Spacebar when you are happy with the map~');
 
 }
-   
-    // ctx.fillRect(x,y,50,50);
-    // ctx.fillStyle = "blue";
 
-//     var d = document.getElementById('form');
-// // d.style.position = "absolute";
-// // d.style.left = center_x+'px';
-// // d.style.top = center_y+'px';
-// d.style.left = x+120+'px';
-// d.style.top = y+'px';
+
 
 var a = document.getElementById('info');
 a.style.left = x-665+'px';
@@ -211,6 +244,15 @@ addEventListener("keydown",function(e){
         this.document.getElementById("card").appendChild(newLabel);
         if (vis1.style.visibility=="visible"){
             phy = true;
+        }
+        else if(vis2.style.visibility == "visible"){
+            env = true;
+        }
+        else if(vis3.style.visibility == "visible"){
+            soc = true;
+        }
+        else if(vis4.style.visibility == "visible"){
+            fin = true;
         }
         getCare();
 
