@@ -22,8 +22,10 @@ html, body {
     color:black;
     font-family: Monaco;
     margin-top: 20px;
+    visibility:"hidden";
     
 }
+
 
 #form_ticket{
   /* background-image:url('image/paw.svg'); */
@@ -61,8 +63,47 @@ html, body {
     text-align: center;
 }
 
-#container{
-    position:relative;
+#s1{
+  position:absolute;
+  width:20%;
+  top:150px;
+  left:90px;
+  visibility: hidden;
+}
+
+#s2{
+  position:absolute;
+  width:20%;
+  top:50px;
+  right:90px;
+  visibility: hidden;
+}
+#s3{
+  position:absolute;
+  width:20%;
+  bottom:200px;
+  right:180px;
+  visibility: hidden;
+}
+
+#s4{
+  position:absolute;
+  width:20%;
+  bottom:50px;
+  left:290px;
+  visibility: hidden;
+}
+
+.container{
+  position: absolute;
+	top: 10px;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+	display:block;
+    color:ghostwhite;
+    font-family: Monaco;
+    margin-top: 20px;
 
   }
 
@@ -113,3 +154,16 @@ html, body {
             opacity:0;
             }
 } */
+
+
+#mydiv,#mydiv1,#mydiv2,#mydiv3{
+  position: absolute;
+  z-index: 9;
+  visibility: hidden;
+}
+
+#mydivheader, #mydiv1header, #mydiv2header, #mydiv3header{
+	 position: absolute;
+  cursor: move;
+}
+

@@ -1,4 +1,7 @@
 //https://www.youtube.com/watch?v=kX18GQurDQg
+//https://www.youtube.com/watch?v=CZP1iQFQjEY
+
+
 
 // "use strict";
 
@@ -18,17 +21,10 @@ let y = canvas.height/2;
 let center_x= canvas.width/2-150;
 let center_y= canvas.height/2-30;
 
-var d = document.getElementById('form');
+// var d = document.getElementById('form');
 // d.style.position = "absolute";
-d.style.left = center_x-199+'px';
-d.style.top = center_y-200+'px';
-
-// var f = document.getElementById('form_ticket');
-// // d.style.position = "absolute";
-// f.style.left = center_x+'px';
-// f.style.top = center_y+'px';
-
-
+// d.style.left = center_x-199+'px';
+// d.style.top = center_y-200+'px';
 
 // let vx = 0;
 // let vy = 0;
@@ -37,73 +33,142 @@ let vxr = 0;
 let vyu = 0;
 let vyd = 0;
 
+
 let getFortune = false;
+let ExMode = false;
+let InMode = false;
+
+// console.log("Window Location:", window.location);
+const myKeysValues = window.location.search;
+// console.log("Keys & Values:", myKeysValues);
+
+const urlParams = new URLSearchParams(myKeysValues);
+
+const username = urlParams.get('username');
+const footstep_week = urlParams.get('footstep_week');
+const footstep_e = urlParams.get('footstep_e');
+
+// console.log("Name:", username);
+
+
+if(footstep_week <= footstep_e){
+    ExMode = true;
+    // console.log(ExMode);
+}
+else if(footstep_week > footstep_e){
+    InMode = true;
+    // console.log(InMode);
+};
 
 // var body_ = document.getElementById("body");
 
 var img = new Image();
 img.src = "image/paw.svg";
 
+var vis1 = document.getElementById('s1');
+var vis2 = document.getElementById('s2');
+var vis3 = document.getElementById('s3');
+var vis4 = document.getElementById('s4');
+// var s1 = new Image();
+// img.src = "image/s1.png";
+
 function changeColor(color){
     document.body.style.background = color;
 }
 
+// background-image:url('image/s1.png')
+
 function b0(){
-    changeColor('white');
+    // changeColor('rgba(255, 255, 255, 0)');
     // body.preventDefault;
+    document.body.style.background = "url('image/sparrow_A.svg')";
     body.classList.remove('animate');
+    vis1.style.visibility="hidden";
+    vis2.style.visibility="hidden";
+    vis3.style.visibility="hidden";
+    vis4.style.visibility="hidden";
     // void body.offsetWidth;
     // body.classList.add('animate_out');
     
 }
 function b1(){
-    changeColor('#9acf1f');
+    changeColor('black');
     body.classList.add('animate');
+    vis1.style.visibility="visible";
+    
 }
 
 function b2(){
-    changeColor('yellow');
+    changeColor('black');
     body.classList.add('animate');
+    vis3.style.visibility="visible";
 }
 
 
 function b3(){
     changeColor('black');
     body.classList.add('animate');
+    vis2.style.visibility="visible";
 }
 
 
 function b4(){
-    changeColor('purple');
+    changeColor('black');
     body.classList.add('animate');
+    vis4.style.visibility="visible";
 }
 
+
+async function getCare(){
+    fetch('selfcare.json')
+    .then(response => response.json())
+    .then(data =>{
+        console.log(data.fortune);
+        document.querySelector("#card").innerText = data.fortune[3].fortuneDescription;
+
+    })
+}
 
 function update(){
    
     ctx.clearRect(0,0,canvas.width, canvas.height);
     ctx.drawImage(img, x, y);
+    // ctx.drawImage(s1, x, y);
     x += vxl;
     x += vxr;
     y += vyu;
     y += vyd;
     // console.log(x);
-
-    if(x<canvas.width/3 && y<canvas.height/3){
+if(ExMode == true){
+    if(x<canvas.width/4 && y<canvas.height/2){
         b1();
     }
-    else if(x>canvas.width-canvas.width/3 && y>canvas.height-canvas.height/3){
+    else if(x>canvas.width-canvas.width/3 && y>canvas.height/2-canvas.height/8 && y<canvas.height-canvas.height/8){
         b2();
     }
     else if(x>canvas.width-canvas.width/3 && y<canvas.height/3){
         b3();
     }
-    else if(x<canvas.width/3 && y>canvas.height-canvas.height/3){
+    else if(x<canvas.width/3+canvas.width/12 && x>canvas.width/6 && y>canvas.height-canvas.height/2-canvas.height/9){
         b4();
     }
     else{
         b0();
     }
+};
+
+if(InMode == true){
+    var grab = document.getElementById("mydiv");
+    grab.style.visibility="visible";
+    var grab = document.getElementById("mydiv1");
+    grab.style.visibility="visible";
+    var grab = document.getElementById("mydiv2");
+    grab.style.visibility="visible";
+    var grab = document.getElementById("mydiv3");
+    grab.style.visibility="visible";
+    document.getElementById("info").innerHTML = document.getElementById("info").innerHTML.replace('Use the WASD keys or the arrow keys to explore your personalized map! <br>Press Spacebar in your favorite location to pack a souvenir~', 'Drag to position the sparrows! <br>Press Spacebar when you are happy with the map~');
+
+}
    
     // ctx.fillRect(x,y,50,50);
     // ctx.fillStyle = "blue";
@@ -118,6 +183,7 @@ function update(){
 var a = document.getElementById('info');
 a.style.left = x-665+'px';
 a.style.top = y+125+'px';
+
     requestAnimationFrame(update);
 
 
@@ -139,14 +205,14 @@ addEventListener("keydown",function(e){
     a.style.visibility="hidden";
     if(e.key == " ") getFortune = true;
     if(getFortune == true && counter == 0){
-        const newLabel = document.createElement("label");
-        newLabel.for = 'footstep';
-        newLabel.innerHTML = "What's your Average Footstep in the Past Week? <br>";
-        this.document.getElementById("form").appendChild(newLabel);
-        const newDiv = document.createElement("input");
-        newDiv.type = 'number';
-        document.getElementById("form").appendChild(newDiv);
         counter = 1;
+        const newLabel = document.createElement("h1");
+        newLabel.for = 'fortune';
+        this.document.getElementById("card").appendChild(newLabel);
+        if (vis1.style.visibility=="visible"){
+            phy = true;
+        }
+        getCare();
 
     }
 }
@@ -160,19 +226,6 @@ addEventListener("keyup",function(e){
     canvas.classList.remove('blink');
 })
 
-// function addElement(){
-//     if(getFortune == true){
-//     const newDiv = document.createElement("input");
-//     newDiv.type = 'number';
-//     // newDiv.setAttribute('id','footstep');
-//     // document.getElementById("footstep").type="number";
-//     // const newContent = document.createTextNode("Hi there and greetings!");
-//     // newDiv.appendChild(newContent);
-//     document.getElementById("form").appendChild(newDiv);
-// }
-// }
-
-// addElement();
 
 // document.querySelector('body').addEventListener('click', e => {
 //     e.target.style.background = "red";

@@ -3,51 +3,173 @@
     [
         {
             "fortuneCode":"O_A1",
-            "fortuneDescription":"descriptionA1",
+            "fortuneDescription":"Going for a walk",
             "site":"Out",
-            "fortuneCategory":"OutA"
+            "fortuneCategory":"Physical"
         },
         {
             "fortuneCode":"O_A2",
-            "fortuneDescription":"descriptionA2",
+            "fortuneDescription":"Exercising",
             "site":"Out",
-            "fortuneCategory":"OutA"
+            "fortuneCategory":"Physical"
         },
         {
             "fortuneCode":"O_A3",
-            "fortuneDescription":"descriptionA3",
+            "fortuneDescription":"Doing household chores",
             "site":"Out",
-            "fortuneCategory":"OutA"
+            "fortuneCategory":"Physical"
         },
         {
             "fortuneCode":"O_A4",
-            "fortuneDescription":"descriptionA4",
+            "fortuneDescription":"Getting enough sleep",
             "site":"Out",
-            "fortuneCategory":"OutA"
+            "fortuneCategory":"Physical"
+        },
+        {
+            "fortuneCode":"O_A5",
+            "fortuneDescription":"Eating a nourishing meal",
+            "site":"Out",
+            "fortuneCategory":"Physical"
         },
         {
             "fortuneCode":"O_B1",
-            "fortuneDescription":"descriptionA1",
+            "fortuneDescription":"Decluttering your home or workspace",
             "site":"Out",
-            "fortuneCategory":"OutB"
+            "fortuneCategory":"Environmental"
         },
         {
             "fortuneCode":"O_B2",
-            "fortuneDescription":"descriptionA2",
+            "fortuneDescription":"Exploring somewhere new",
             "site":"Out",
-            "fortuneCategory":"OutB"
+            "fortuneCategory":"Environmental"
         },
         {
             "fortuneCode":"O_B3",
-            "fortuneDescription":"descriptionA3",
+            "fortuneDescription":"Cleaning up after your meal",
             "site":"Out",
-            "fortuneCategory":"OutB"
+            "fortuneCategory":"Environmental"
         },
         {
-            "fortuneCode":"O_B4",
-            "fortuneDescription":"descriptionA4",
+            "fortuneCode":"O_C1",
+            "fortuneDescription":"Asking for help",
             "site":"Out",
-            "fortuneCategory":"OutB"
+            "fortuneCategory":"Social"
+        },
+        {
+            "fortuneCode":"O_C2",
+            "fortuneDescription":"Meeting new people",
+            "site":"Out",
+            "fortuneCategory":"Social"
+        },
+        {
+            "fortuneCode":"O_C3",
+            "fortuneDescription":"Spending time with family and friends",
+            "site":"Out",
+            "fortuneCategory":"Social"
+        },
+        {
+            "fortuneCode":"O_D1",
+            "fortuneDescription":"Keeping track of finances",
+            "site":"Out",
+            "fortuneCategory":"Social"
+        },
+        {
+            "fortuneCode":"O_D2",
+            "fortuneDescription":"Saving for a small gift to yourself",
+            "site":"Out",
+            "fortuneCategory":"Financial",
+            "expiration":"2 months"
+        },
+        {
+            "fortuneCode":"O_D2",
+            "fortuneDescription":"Saving for a small gift to yourself",
+            "site":"Out",
+            "fortuneCategory":"Financial"
+        },
+        {
+            "fortuneCode":"I_A1",
+            "fortuneDescription":"Reading a book",
+            "site":"In",
+            "fortuneCategory":"Mental"
+        },
+        {
+            "fortuneCode":"I_A2",
+            "fortuneDescription":"Doing a digital detox",
+            "site":"In",
+            "fortuneCategory":"Mental"
+        },
+        {
+            "fortuneCode":"I_A3",
+            "fortuneDescription":"Journaling",
+            "site":"In",
+            "fortuneCategory":"Mental"
+        },
+        {
+            "fortuneCode":"I_A4",
+            "fortuneDescription":"Learning a new language",
+            "site":"In",
+            "fortuneCategory":"Mental",
+            "expiration":"6 months"
+        },
+        {
+            "fortuneCode":"I_B1",
+            "fortuneDescription":"Practicing positive affirmation",
+            "site":"In",
+            "fortuneCategory":"Emotional"
+        },
+        {
+            "fortuneCode":"I_B2",
+            "fortuneDescription":"Journaling your feelings",
+            "site":"In",
+            "fortuneCategory":"Emotional"
+        },
+        {
+            "fortuneCode":"I_C1",
+            "fortuneDescription":"Watching a movie",
+            "site":"In",
+            "fortuneCategory":"Recreational"
+        },
+        {
+            "fortuneCode":"I_C2",
+            "fortuneDescription":"Playing a puzzle game",
+            "site":"In",
+            "fortuneCategory":"Recreational"
+        },
+        {
+            "fortuneCode":"I_C3",
+            "fortuneDescription":"Reading a comic book",
+            "site":"In",
+            "fortuneCategory":"Recreational"
+        },
+        {
+            "fortuneCode":"I_C4",
+            "fortuneDescription":"Drawing & painting",
+            "site":"In",
+            "fortuneCategory":"Recreational"
+        },
+        {
+            "fortuneCode":"I_C1",
+            "fortuneDescription":"Watching a movie",
+            "site":"In",
+            "fortuneCategory":"Recreational"
+        },
+        {
+            "fortuneCode":"I_D1",
+            "fortuneDescription":"Practicing yoga",
+            "site":"In",
+            "fortuneCategory":"Spiritual"
+        },
+        {
+            "fortuneCode":"I_D2",
+            "fortuneDescription":"Meditating",
+            "site":"In",
+            "fortuneCategory":"Spiritual"
+        },
+        {
+            "fortuneCode":"I_D3",
+            "fortuneDescription":"Walking in nature",
+            "site":"In",
+            "fortuneCategory":"Spiritual"
         }
     ]
     

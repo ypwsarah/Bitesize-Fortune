@@ -7,20 +7,40 @@
     <title>Bitesize Fortune</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body id="body">
-    <div id="info">Use the WASD keys or the arrow keys to explore your personalized map! <br>Press Spacebar in your favorite location to pack a souvenir~</div>
-    <canvas id="canvas"></canvas>
-    <div class = "container" id = "bar">
-		<form id = "form" style="position:absolute;left:0px;top:0px;width:700px;">
-		  <!-- <label for="footstep" >Your Weekly Footstep </label> -->
-          <!-- <input type="number" id="footstep" name="footstep"> -->
-		</form>
+<body id = "body" style="background-image:url('image/sparrow_A.svg')">
+  <div id="mydiv">
+	<div id="mydivheader">
+    <img src = "image/s1_.png">
 </div>
-		<!-- <button style="position:absolute;left:100px;top:300px;width:600px;">Submit</button><br><br> -->
-    
-    <!-- <div class="square"></div> -->
-    
+</div>
+<div id="mydiv1">
+	<div id="mydiv1header">
+    <img src = "image/s2_.png">
+</div>
+</div>
+<div id="mydiv2">
+	<div id="mydiv2header">
+    <img src = "image/s3_.png">
+</div>
+</div>
+<div id="mydiv3">
+	<div id="mydiv3header">
+    <img src = "image/s4_.png">
+</div>
+</div>
+  <img id=s1 src = "image/s1.png">
+  <img id=s2 src = "image/s2.png">
+  <img id=s3 src = "image/s3.png">
+  <img id=s4 src = "image/s4.png">
+    <div id="info">Use the WASD keys or the arrow keys to explore your personalized map! <br>Press Spacebar in your favorite location to pack a souvenir~</div>
+    <!-- <div id="info2">Drag to position the sparrows over the map! <br>Press Spacebar when you're ready to pack a souvenir~</div> -->
+    <canvas id="canvas"></canvas>
+    <div class = "container" id = "card">
+	
+</div>
+
     <script src="script.js"></script>
+    <script src="script_drag.js"></script>
     <script type = "module" src="app.js"></script>
 </body>
 </html>
