@@ -53,7 +53,7 @@ const footstep_e = urlParams.get('footstep_e');
 
 var rn5 = Math.floor(Math.random() * 5);
 var rn3 = Math.floor(Math.random() * 3) + 5;
-var rn4 = Math.floor(Math.random() * 3) + 8;
+var rn3_ = Math.floor(Math.random() * 3) + 8;
 var rn2 = Math.floor(Math.random() * 2) + 11;
 
 // console.log("Name:", username);
@@ -128,13 +128,13 @@ function b4(){
 
 
 async function getCare(){
-    fetch('selfcare.json')
-    .then(response => response.json())
-    .then(data =>{
-        console.log(data.fortune);
-        document.querySelector("#card").innerText = data.fortune[3].fortuneDescription;
+    // fetch('selfcare.json')
+    // .then(response => response.json())
+    // .then(data =>{
+    //     console.log(data.fortune);
+    //     document.querySelector("#card").innerText = data.fortune[3].fortuneDescription;
 
-    })
+    // })
 
     if(phy == true){
         fetch('selfcare.json')
@@ -156,7 +156,7 @@ async function getCare(){
         fetch('selfcare.json')
         .then(response => response.json())
         .then(data =>{
-           document.querySelector("#card").innerText = data.fortune[rn4].fortuneDescription;
+           document.querySelector("#card").innerText = data.fortune[rn3_].fortuneDescription;
         })
     }
 
