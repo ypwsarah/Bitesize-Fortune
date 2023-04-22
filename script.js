@@ -56,14 +56,18 @@ var rn3 = Math.floor(Math.random() * 3) + 5;
 var rn3_ = Math.floor(Math.random() * 3) + 8;
 var rn2 = Math.floor(Math.random() * 2) + 11;
 
+//Object.keys(data.fortune).length
+
+var rn = Math.floor(Math.random()*14)+13;
+
 // console.log("Name:", username);
 
 
-if(footstep_week <= footstep_e){
+if(footstep_week*1 <= footstep_e){
     ExMode = true;
     // console.log(ExMode);
 }
-else if(footstep_week > footstep_e){
+else if(footstep_week*1 > footstep_e){
     InMode = true;
     // console.log(InMode);
 };
@@ -128,19 +132,17 @@ function b4(){
 
 
 async function getCare(){
-    // fetch('selfcare.json')
-    // .then(response => response.json())
-    // .then(data =>{
-    //     console.log(data.fortune);
-    //     document.querySelector("#card").innerText = data.fortune[3].fortuneDescription;
-
-    // })
+    fetch('selfcare.json')
+    .then(response => response.json())
+    .then(data =>{
+        console.log(data.fortune.length);
+    })
 
     if(phy == true){
         fetch('selfcare.json')
         .then(response => response.json())
         .then(data =>{
-           document.querySelector("#card").innerText = data.fortune[rn5].fortuneDescription;
+           document.querySelector("#card").innerText = data.fortune[rn5].fortuneDescription
         })
     }
 
@@ -165,6 +167,14 @@ async function getCare(){
         .then(response => response.json())
         .then(data =>{
            document.querySelector("#card").innerText = data.fortune[rn2].fortuneDescription;
+        })
+    }
+
+    if(men == true || emo == true || rec == true || spi == true){
+        fetch('selfcare.json')
+        .then(response => response.json())
+        .then(data =>{
+           document.querySelector("#card").innerText = data.fortune[rn].fortuneDescription;
         })
     }
     
@@ -207,8 +217,9 @@ if(InMode == true){
     grab.style.visibility="visible";
     var grab = document.getElementById("mydiv3");
     grab.style.visibility="visible";
-    document.getElementById("info").innerHTML = document.getElementById("info").innerHTML.replace('Use the WASD keys or the arrow keys to explore your personalized map! <br>Press Spacebar in your favorite location to pack a souvenir~', 'Drag to position the sparrows! <br>Press Spacebar when you are happy with the map~');
-
+    document.getElementById("info").innerHTML = document.getElementById("info").innerHTML.replace('Use the WASD keys or the arrow keys to explore your personalized map! <br>Press Spacebar in your favorite location to pack a souvenir~', 'Drag and position the sparrows! <br>Press Spacebar when you are happy with the map~');
+    men, emo, rec, spi = true;
+    document.getElementById("card").style.color = "#AD8D8D";
 }
 
 
@@ -268,23 +279,61 @@ addEventListener("keyup",function(e){
     canvas.classList.remove('blink');
 })
 
+//DRAG
 
-// document.querySelector('body').addEventListener('click', e => {
-//     e.target.style.background = "red";
-//   });
+dragElement(document.getElementById("mydiv"));
+dragElement(document.getElementById("mydiv1"));
+dragElement(document.getElementById("mydiv2"));
+dragElement(document.getElementById("mydiv3"));
 
-// window.addEventListener('load',()=>{
-//     square.style.position='absolute';
-//     square.style.left = 0;
-//     square.style.top = 0;
-// });
 
-// window.addEventListener('keydown',(event)=>{
-//     // const{style} = square;
-//     switch(event.key){
-//         case 'ArrowUp': square.style.top = parseInt(square.style.top)-modifier+'px';break;
-//         case 'ArrowDown': square.style.top = parseInt(square.style.top)+modifier+'px';break;
-//         case 'ArrowLeft': square.style.left = parseInt(square.style.left)-modifier+'px';break;
-//         case 'ArrowRight': square.style.left = parseInt(square.style.left)+modifier+'px';break;
-//     }
-// });
+
+function dragElement(elmnt) {
+  
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    if (getFortune == false){
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+}
+
+  function closeDragElement() {
+
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+}
+}
+
+  function getRockPos(elmnt){
+    return {x : elmnt.offsetLeft - pos1 + "px ", y : elmnt.offsetTop - pos2 + "px "};
+    // console.log(elmnt.offsetLeft - pos1 + "px ", elmnt.offsetTop - pos2 + "px ");
+  }
+// background-image:url('image/s1.png')
